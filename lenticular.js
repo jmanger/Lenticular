@@ -1,12 +1,16 @@
 (function(){
 	
-	if(window.devicemotion){
+	if(window.orientation){
 		
-		window.addEventListener("devicemotion", function(){
+		window.addEventListener("deviceorientation", function(event){
 			
-			document.write("yay");
-			
-		});
-	
-	} else {document.write("nah")}
+			document.getElementById("alpha").innerHTML=event.beta;
+			document.getElementById("gamma").innerHTML=event.gamma;
+			document.body.style.backgroundPosition=(event.beta)+"px "+(event.gamma)+"px";
+				});	
+	} else {
+	document.write("nah");
+		
+	}
+
 })();
